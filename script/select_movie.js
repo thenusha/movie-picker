@@ -1,23 +1,35 @@
-var imdburl = "https://imdb-api.com/en/API/Top250Movies/k_3hg8o4xp";
+var omdbUrl = "https://www.omdbapi.com/?apikey=77b3c115&s=movie";
 var suggestMovieBtn = document.querySelector("#suggest-movie-btn");
 var suggestedMovieEl = document.querySelector("#suggested-movie");
 
-// Function to generate a random number
-function getRandomNumber() {
-  return Math.floor(Math.random() * 249);
-}
-
-// Function to suggest a random movie title
+// Function to suggest a random movie
 function suggestRandomMovie() {
-  fetch(imdburl)
+  fetch(omdbUrl)
     .then((response) => response.json())
     .then((data) => {
-      let randomMovie = data.items[getRandomNumber()].title;
+      console.log("API Response:", data);
+
+      if (data.Response === "False") {
+        suggestedMovieEl.innerHTML = "Error: " + data.Error;
+        return;
+      }
+
+      let movies = data.Search;
+      if (!movies || movies.length === 0) {
+        suggestedMovieEl.innerHTML = "No movies found. Try again!";
+        return;
+      }
+
+      let randomMovie = movies[Math.floor(Math.random() * movies.length)].Title;
+
       suggestedMovieEl.innerHTML =
         "You should watch: <b>" + randomMovie + "</b>";
     })
-    .catch((error) => console.error("Error fetching movie:", error));
+    .catch((error) => {
+      console.error("Fetch Error:", error);
+      suggestedMovieEl.innerHTML = "An error occurred. Please try again later.";
+    });
 }
 
-// Event listener for the button click
+// Event listener for the button
 suggestMovieBtn.addEventListener("click", suggestRandomMovie);

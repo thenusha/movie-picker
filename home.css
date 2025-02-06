@@ -88,5 +88,37 @@ body {
   flex-wrap: wrap;
   justify-content: space-evenly;
   position: absolute;
-  left: 261px;
+  left: 300px;
+}
+.main__card {
+  width: 25em;
+  height: 30em;
+  background-color: #fff;
+  border-radius: 0.625em;
+  box-shadow: 0 0.313em 0.563em -0.063em rgba(0, 0, 0, 0.25);
+  padding: 0;
+  margin: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-evenly;
+  align-items: center;
+  align-self: center;
+}
+
+.button {
+  background-color: rgb(230, 135, 167);
+  color: #fff;
+  border-style: none;
+  padding: 10px;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: NunitoSans;
+  margin: auto;
+}
+
+.button__result {
+  text-align: center;
+  margin: auto;
 }/*# sourceMappingURL=home.css.map */
