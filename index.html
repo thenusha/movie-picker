@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What should I watch?</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
+
 <body>
     <header>
-        <nav>
-            <a href="">Random Movie</a>
-            <a href="">Random TV Show</a>
-            <a href="">Browse</a>
+        <nav class="sidebar">
+            <div class="sidebar__content">
+                <ul class="sidebar__items">
+                    <div class="sidebar__title sidebar__dashboard"></div>
+                    <li class="nav">
+                        <div href="#" class="nav__link">
+                            <span class="nav__link--icon">
+                                <a class="bx bx-home-alt"></a>
+                            </span>
+                            <span>Home</span>
+                            <a class="bx bx-chevron-right arrow-left"></a>
+                        </div>
+                        <ul class="sidebar__items">
+                            <a href="#" class="nav__link sublink">Movies</a>
+                            <a href="#" class="nav__link sublink">TV Shows</a>
+                            <a href="#" class="nav__link sublink">YouTube</a>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- <div class="bottom_content">
+                        <div class="bottom expand_sidebar">
+                          <span> Expand</span>
+                          <i class='bx bx-log-in' ></i>
+                        </div>
+                        <div class="bottom collapse_sidebar">
+                          <span> Collapse</span>
+                          <i class='bx bx-log-out'></i>
+                        </div>
+                      </div> -->
+            </div>
         </nav>
     </header>
     <section>
@@ -18,8 +48,10 @@
             <h1>What should I watch?</h1>
         </div>
     </section>
-    <section>
-        <div></div>
+    <section class="main">
+        <div><button id="suggest-movie-btn">What Movie Should I Watch?</button>
+            <p id="suggested-movie"></p>
+        </div>
     </section>
     <footer>
         <div>
@@ -27,4 +59,5 @@
         </div>
     </footer>
 </body>
+
 </html>
