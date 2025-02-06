@@ -7,7 +7,7 @@ function suggestRandomMovie() {
   fetch(omdbUrl)
     .then(response => response.json())
     .then(data => {
-      console.log("API Response:", data); // Debugging: Check API response in console
+      console.log("API Response:", data);
 
       if (data.Response === "False") {
         suggestedMovieEl.innerHTML = "Error: " + data.Error;
